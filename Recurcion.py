@@ -52,9 +52,49 @@ print(resultado_filtrado)
 
 ##EJERCICIO:
 
-#INVERTIT UNA LISTA DE OBJETOS
+#INVERTIR UNA LISTA DE OBJETOS con het y tail
+
+
+
+def reverse_string(lst_
+
 
 # INVERTIR UNA CADENA
 
 # FIBONNACCI 
+def fibonacci(N):
+    if n == 0:
+        return [ ]
+    elif n == 1: 
+    return [1]
+elif n == 2
+return [1,1]
+else:
+fibo = lis_fibonacci_rec(n-1)
+return fibo + [fibo[-1] + fibo[-2]]
+
+def verificar_seguridad(contrasena, es_par=True):
+    # Caso base: la cadena está vacía
+    if not contrasena:
+        return es_par  # Contraseña segura si la longitud es par
+
+    # Comparar el primer carácter (head) con el resto de la cadena (tail)
+    head = contrasena[0]
+    tail = contrasena[1:]
+
+    if head in tail:
+        return verificar_seguridad(tail, es_par)  # Llamada recursiva con el tail
+    else:
+        return verificar_seguridad(tail, not es_par)  # Invertir la paridad si son distintos
+
+# Ejemplo de uso
+contrasena = "password"
+longitud = len(contrasena)
+if verificar_seguridad(contrasena, longitud % 2 == 0):
+    print(f"La contraseña '{contrasena}' con {longitud} caracteres es segura.")
+else:
+    print(f"La contraseña '{contrasena}' con {longitud} caracteres es insegura.")
+
+
+
 
