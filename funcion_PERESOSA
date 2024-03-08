@@ -1,0 +1,22 @@
+def mult(n, m):
+    mults = [n for n in range(n + 1) if n % m == 0]
+    return mults
+
+def mult_lazy(n, m):
+    num = 0
+    while True:
+        if num % m == 0:
+            yield num
+        num += 1
+
+m = int(input("Ingrese m: "))
+n = int(input("Ingrese el número de términos: "))
+
+mults = mult(n, m)
+print(mults)
+gen_mul = mult_lazy(n, m)
+
+first_100 = [next(gen_mul) for _ in range(100)]
+print("primeros 100: \n", first_100)
+next_100 = [next(gen_mul) for _ in range(100)]
+print("siguientes 100: \n", next_100)
